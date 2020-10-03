@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .container{
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+  
+        <nav class="navbar fixed-top navbar-light bg-light">
+        
+             <a class="navbar-brand" href="#">Flash Express</a>
+             <a class="nav-link inline my-2 my-lg-0" href="#">hello {{request.user}}</a>
+            <a class="nav-link inline my-2 my-lg-0" href="{% url 'logoutUser' %}" tabindex="-1" aria-disabled="true">Logout</a>
+            
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Features</a>
+    
+              </div>
+            </div>
+    
+    
+        </nav>
+
+        <br><br><br><br>
+
+        
+    
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-body">
+        
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ form.management_form }}
+                        {% for field in form %}
+                            {{field.label}}
+                            {{field}}
+                            <hr>
+                        {% endfor %}
+                        
+                        <input type="submit" name="Submit">
+                    </form>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

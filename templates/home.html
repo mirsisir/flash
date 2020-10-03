@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <style>
+.form-inline {
+    display: block;
+}
+</style>
+</head>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Flash Express</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Fast and Reliable Service</h2>
+                    <a class="btn btn-primary" href="{% url 'dashboard' %}">Get Started</a>
+                    
+                    <a class="btn btn-primary js-scroll-trigger" href="#signup"> Contact </a><br><hr>
+                    <div >  
+                        <form class="form-inline mx-auto text-center " method="POST" action="account/track" >
+                            {% csrf_token %}
+                            <input class="form-control mr-sm-2" name="order" type="search" placeholder="Track Your Parcel" aria-label="Search"> <br> <br>
+                            <button class="btn btn-outline-success" type="submit">Track</button><br>
+                        </form>
+                    </div>
+                    <br><hr>
+
+
+
+                </div>
+
+            </div>
+        </header>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto mar">
+                        <h2 class="text-white mb-4">Flash Express</h2>
+                        <p class="text-white-50 dis">
+                            Flash Express is a bicycle based courier service in Dhaka, Bangladesh. Flash Express can transport all sorts of documents and parcels from here and there to clients and customers .
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container">
+
+                <!-- Project One Row-->
+                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                    <div class="col-lg-6"><img class="img-fluid" src="{% static 'assets/img/12.jpg'%}" alt="" /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">DAILY PICK UP</h4>
+                                    <p class="mb-0 text-white-50">DAILY PICK UP
+                                        We pick up daily from your pick point free of cost and there are no limitations.
+                                        
+                                        </p>
+                                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Two Row-->
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-lg-6"><img class="img-fluid" src="{% static 'assets/img/11.jpg'%}" alt="" /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Moving</h4>
+                                    <p class="mb-0 text-white-50">Moving
+                                        The clients get the safest and secured moving process.</p>
+                                    <hr class="d-none d-lg-block mb-0 mr-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                    <div class="col-lg-6"><img class="img-fluid" src="{% static 'assets/img/12.jpg'%}" alt="" /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">ONLINE MANAGEMENT</h4>
+                                    <p class="mb-0 text-white-50">
+                                        Get all informations and updates from your user dashboard.
+                                        
+                                        </p>
+                                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+  {% include 'footer.html' %}
+{% endblock %}

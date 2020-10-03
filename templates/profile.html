@@ -1,0 +1,121 @@
+{% load static %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<hr>
+<div class="container bootstrap snippet">
+    <div class="row">
+          <div class="col-sm-10"><h1> hello {{request.user}}</h1></div>
+    </div>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+              
+
+      <div class="text-center">
+        <img src="{{pic.url}}" class="avatar img-circle img-thumbnail" alt="avatar" >
+        
+        <!-- src="request.user.customer.profile_pic.url" -->
+        
+        <input type="file" class="text-center center-block file-upload">
+        <hr>
+        <a class="btn btn-warning" href="{% url 'dashboard' %}"> &#8592; Back to Dashboard</a>
+
+      </div></hr><br>
+
+               
+            
+          
+        </div><!--/col-3-->
+    	<div class="col-sm-9">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+              </ul>
+
+              
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                <hr>
+                  <form class="form" action="" method="POST" id="registrationForm">
+                      {% csrf_token %}
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="name"><h4> Name</h4></label>
+                              <input type="text" class="form-control" name="name" id="{{form.name}}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                      </div>
+          
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="tel"><h4>Phone</h4></label>
+                              <input type="tel" class="form-control" id={{form.phone}}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                              <label for="text"><h4>Shop name</h4></label>
+                              <input type="text" class="form-control" id={{form.shop_name}}
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="text"><h4>Pickup address</h4></label>
+                              <input type="text" class="form-control" id={{form.pickup_address}}
+                          </div>
+                      </div>
+                      <div>
+                          
+
+                      </div>
+
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Update</button>
+                            </div>
+                      </div>
+                        
+
+                      {{form.errors}}
+              	</form>
+              
+              <hr>
+              
+             </div><!--/tab-pane-->
+
+             <div class="tab-pane" id="settings">
+            		
+               	
+                  <hr>
+
+              </div>
+               
+              </div><!--/tab-pane-->
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+                                                      

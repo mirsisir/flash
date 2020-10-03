@@ -1,0 +1,271 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+  <!-- Page Wrapper -->
+
+
+  <div id="wrapper">
+
+    <div class="col-lg-1 d-none d-lg-block"> 
+    </div>
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800"><a href="{% url "dashboard" %}">Dashboard</a></h1>
+            
+
+          </div>
+          <!-- Content Row -->
+          <form method="get">
+          <div class="filter">
+              <label for="start">Start date:</label>
+
+              <input type="date" id="start_date" name="start_date"
+            
+                min="2020-01-01" max="2021-12-31">
+
+
+                <label for="start">End date:</label>
+                <input type="date" id="end_date" name="end_date"
+                  
+                min="2020-01-02" max="2021-12-31">
+
+                <button class="btn btn-secondary btn-sm" type="submit">Search</button>
+                <a class="btn btn-secondary btn-sm" href="{% url 'dashboard' %}">All Time Record</a>
+                <hr>
+          </div>
+        </form>
+              
+          <div class="row">
+
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">  <a href="{% url 'all_order_user' %}">Old Order</a> </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="{% url 'all_order_user' %}">{{number_order}}</a> </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-boxes"></i>    
+                      </div>
+                    </div>
+                      
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><a href="{% url 'new_order' %}">New Order</a></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> <a href="{% url 'new_order' %}">{{new_order}}</a> </div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-boxes"></i>    
+                        </div>
+                      </div>
+                        
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+            <hr>
+            <div class="row">
+            
+
+
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Order Delevery
+                      </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> {{delivered}} </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-check"></i>  
+                                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Order In Transit</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> {{INTRANSIT}} </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-truck"></i>               
+                         </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Order hold</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> {{hold}}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="far fa-pause-circle"></i>            
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Order Return</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{Return}} </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+
+
+
+
+        </div>
+
+        <hr>
+      <div class="row">
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total sell</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">tk : {{sell}}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total delevety fee</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">tk : {{cost}}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-truck"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Balance TK</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">tk : {{balance}}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Payment Receive </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{payment_taka}}</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+<br>
+<hr>
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+    <div class="col-lg-1 d-none d-lg-block"> 
+    </div>
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js'%}"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="{% static 'js/sb-admin-2.min.js'%}"></script>
+  {% endblock %}
+

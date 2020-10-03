@@ -1,0 +1,90 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+
+        <div class="row">
+          <div class="col-lg-2 d-none d-lg-block"> 
+          </div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                {% if update == True %} 
+                <h1 class="h4 text-gray-900 mb-4">Update Your Parcel Data</h1>
+                {% else %}
+                <h1 class="h4 text-gray-900 mb-4">Send Parcel Anywhere In Dhaka</h1>
+                {% endif %}
+              </div>
+              <form class="user" method="POST" action="" >
+                {% csrf_token %}
+                <div class="form-group row">
+
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    {{task_form.receiver_name.label}}
+                    <input type="text" class="form-control form-control-user" id="{{task_form.receiver_name}}
+                  </div>
+
+                  <div class="col-sm-6">
+                    {{task_form.receiver_phone.label}}
+                    <input type="tel" class="form-control form-control-user" id="{{task_form.receiver_phone}} 
+                     </div>
+
+                </div>
+                
+                <div class="form-group row">
+
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    {{task_form.order_number.label}}
+                    <input type="text" class="form-control form-control-user" id="{{task_form.order_number}}
+                  </div>
+
+                  <div class="col-sm-6">
+                    {{task_form.condition.label}}
+                      <input type="number" class="form-control form-control-user" id="{{task_form.condition}} 
+                       </div>
+                </div>
+
+                <div class="form-group">
+                  {{task_form.receiver_address.label}}
+                  <input type="text" class="form-control form-control-user" id="{{task_form.receiver_address}}
+                </div>
+
+                <div class="form-group">
+                  <div class="alert alert-success" role="alert">
+                    {{task_form.errors}}
+                  </div>
+                  
+
+
+                  
+                </div>
+                
+                <button class="btn btn-primary btn-user btn-block" type="submit">Confirm Sending Order</button>
+                <hr>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js'%}"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="{% static 'js/sb-admin-2.min.js'%}"></script>
+{% endblock %}

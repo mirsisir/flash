@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrafields</title>
+    <link href="{% static 'css/sb-admin-2.min.css'%}" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-2 d-none d-lg-block"> 
+          </div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Add Some Extra fields</h1>
+              </div>
+              <form class="user" method="POST" action="" >
+                {% csrf_token %}
+                <div class="form-group">
+                  {{task_form.name.label}}
+                  <input type="text" class="form-control form-control-user" id={{task_form.name}} 
+                </div>
+                <div class="form-group">
+                  {{task_form.shop_name.label}}
+                  <input type="text" class="form-control form-control-user" id={{task_form.shop_name}} 
+
+                </div>
+
+                <div class="form-group">
+                  {{task_form.pickup_address.label}}
+                  <input type="text" class="form-control form-control-user" id={{task_form.pickup_address}} 
+                </div>
+
+                <div class="form-group">
+                  {{task_form.phone.label}}
+                  <input type="tel" class="form-control form-control-user" id= {{task_form.phone}} 
+                </div>
+                
+
+                  <br>
+                <input type="submit" value="Add Data" class="btn btn-primary btn-user btn-block">
+
+              </form>
+
+              <hr>
+              <div class="alert alert-success" role="alert">
+                {{form.errors}}
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

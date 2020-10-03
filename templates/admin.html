@@ -1,0 +1,290 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Flash Express</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico'%}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
+                
+        <!-- Custom fonts for this template-->
+        <link href="{% static 'vendor/fontawesome-free/css/all.min.css'%}" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+        <!-- Custom styles for this template-->
+        <link href="{% static 'css/sb-admin-2.min.css'%}" rel="stylesheet">
+        <link href="{% static 'css/sb-admin-2.min.css'%}" rel="stylesheet">
+        
+        <style>
+            
+        
+        </style>
+    </head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <div class="wrapper">
+
+  
+      <nav class="navbar fixed-top navbar-light bg-light">
+      
+           <a class="navbar-brand" href="#">Flash Express</a>
+           <a class="nav-link inline my-2 my-lg-0" href="#">hello {{request.user}}</a>
+          <a class="nav-link inline my-2 my-lg-0" href="{% url 'logoutUser' %}" tabindex="-1" aria-disabled="true">Logout</a>
+          
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Features</a>
+  
+            </div>
+          </div>
+  
+  
+      </nav>
+
+    </div>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <a href="{% url "admin" %}">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+          </a>
+          <a href="{% url "active_user" %}">
+            <h1 class="h3 mb-0 text-gray-800">Active User</h1>
+          </a>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"> <a href="{%url "new_order_admin" %}">New Order</a></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> <a href="{%url "new_order" %}"> {{new_order}}</a> </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1"> <a href="{%url "in_transit" %}"> Out for delivery</a></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="{%url "in_transit" %}"> {{INTRANSIT}}</a></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1"> <a href="{% url "deliver" %}">Deliver</a> </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><a href="{% url "deliver" %}">{{delivered}}</a> </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1"> <a href="{% url "hold"  %}">Hold</a> </div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"> <a href="{% url "hold"  %} ">{{hold}}</a>  </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+
+          <!-- Content Row -->
+          <div class="container-fluid">
+
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">{{header_name}}</h6>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th> Sender Name</th>
+                        <th>State</th>
+                        <th>Receiver Name</th>
+                        <th>Receiver Address</th>
+                        <th>Receiver Phon</th>
+                        <th>Condition</th>
+                        <th>Order NO:</th>
+                        <th>Date</th>
+                        <th>Note</th>
+
+
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th> Sender Name</th>
+                        <th>State</th>
+                        <th>Receiver Name</th>
+                        <th>Receiver Address</th>
+                        <th>Receiver Phon</th>
+                        <th>Condition</th>
+                        <th>Order NO:</th>
+                        <th>Date</th>
+                        <th>Note</th>
+
+
+                    </tfoot>
+                    <tbody>
+                      {% for order in all_order %}
+                      <tr>
+                    
+                        <td>{{order.user}}</td>
+                        <td>
+                          <a href="{% url 'update_order' order.id %}">{{order.status}} </a>
+                        </td>
+                        <td>{{order.receiver_name}}</td>
+                        <td>{{order.receiver_address}}</td>
+                        <td>{{order.receiver_phone}}</td>
+                        <td>{{order.condition}}</td>
+                        <td>{{order.order_number}}</td>
+                        <td>{{order.order_date1}}</td>
+                        <td>{{order.note}}</td>
+
+
+                        
+
+
+                      </tr>
+                      {% endfor %}
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src=" {% static 'vendor/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js'%}"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="{% static 'js/sb-admin-2.min.js'%}"></script>
+
+  <!-- Page level plugins -->
+  <script src="{% static 'vendor/chart.js/Chart.min.js'%}"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="{% static 'js/demo/chart-area-demo.js'%}"></script>
+  <script src="{% static 'js/demo/chart-pie-demo.js '%}"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js'%}"></script>
+  
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'js/sb-admin-2.min.js'%}"></script>
+  
+    <!-- Page level plugins -->
+    <script src="{% static 'vendor/datatables/jquery.dataTables.min.js'%}"></script>
+    <script src="{% static 'vendor/datatables/dataTables.bootstrap4.min.js'%}"></script>
+  
+    <!-- Page level custom scripts -->
+    <script src="{% static 'js/demo/datatables-demo.js'%}"></script>
+
+</body>
+
+</html>

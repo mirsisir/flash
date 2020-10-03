@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Payment</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        .newsletter-subscribe {
+            color: #313437;
+            background-color: #ffffff;
+            padding: 55px 74px
+        }
+        
+        .newsletter-subscribe p {
+            color: #7d8285;
+            line-height: 1.5
+        }
+        
+        .newsletter-subscribe h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            padding-top: 0;
+            margin-top: 0;
+            color: inherit
+        }
+        
+        .newsletter-subscribe .intro {
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto 25px
+        }
+        
+        .newsletter-subscribe .intro p {
+            margin-bottom: 35px
+        }
+        
+        .newsletter-subscribe form {
+            justify-content: center
+        }
+        
+        .newsletter-subscribe form .form-control {
+            background: #eff1f4;
+            border: none;
+            border-radius: 3px;
+            box-shadow: none;
+            outline: none;
+            color: inherit;
+            text-indent: 9px;
+            height: 45px;
+            margin-right: 10px;
+            min-width: 250px
+        }
+        
+        .newsletter-subscribe form .btn {
+            padding: 16px 32px;
+            border: none;
+            background: none;
+            box-shadow: none;
+            text-shadow: none;
+            opacity: 0.9;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 0.4px;
+            line-height: 1
+        }
+        
+        .newsletter-subscribe form .btn:hover {
+            opacity: 1
+        }
+        
+        .newsletter-subscribe form .btn:active {
+            transform: translateY(1px)
+        }
+        
+        .newsletter-subscribe form .btn-primary {
+            background-color: #055ada !important;
+            color: #fff;
+            outline: none !important
+        }
+        
+        body {
+            background: #eee
+        }
+        
+        .newsletter {
+            color: #0062cc !important
+        }
+    </style>
+</head>
+<body>
+    <div class="newsletter-subscribe mt-5 container">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center newsletter">Last Payment Amount </h2>
+                <p class="text-center"> -----------  </p>
+            </div>
+            <form class="form-inline" method="post" action="" >
+                {% csrf_token %}
+                <div class="form-group"><input class="form-control" type="number" name="new" placeholder="Enter the last Amount" id="" ></div>
+                <div class="form-group"><button class="btn btn-primary" type="submit">Add Payment Record </button></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- <form action="" method="POST">
+    
+
+    
+   <div class="col-8 col-md-8 align-self-center p-0" > <input class="inp ml-2 ml-md-4 w-100 border-0 id="new" type="number" name="new" placeholder="new pay" ></div>
+    <br><br>
+    <button type="submit"> MAKE PAYMENT </button>
+
+</form> -->
